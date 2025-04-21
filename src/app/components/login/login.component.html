@@ -1,0 +1,51 @@
+
+
+<!--    <div class="form-bg">-->
+
+<!--        <form [formGroup]="loginForm" class="form">-->
+<!--            <div class="box">-->
+<!--               -->
+<!--                <div style="display: flex; margin: 0 auto;">-->
+<!--                    <h4 class="admin">Вход</h4>-->
+<!--                </div>-->
+<!--                <div>-->
+<!--                    <input type="username" name="adminName" id="username" placeholder="Введите логин" formControlName="username" required/>-->
+<!--                </div>-->
+<!--                <div>-->
+<!--                    <input type="password" name="password" id="password" placeholder="Введите пароль" formControlName="password" required/>-->
+<!--                </div>-->
+<!--                <button class="login-button" type="submit" (click)="login()" [disabled]="loginForm.invalid">Войти</button>-->
+<!--                <div>-->
+<!--                    <button class="SignUp" type="button" routerLink="/signup">Регистрация</button>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </form>-->
+<!--    </div>-->
+
+
+<body>
+
+<div class="main-box">
+
+    <div class="error-box"  [class.visible]="errorMessage">
+        {{ errorMessage}}
+    </div>
+    <h1>Вход в личный кабинет</h1>
+
+    <form [formGroup]="loginForm">
+
+        <label>Логин</label>
+        <input type="username" name="username" id="username" placeholder="Введите логин" formControlName="username" required/>
+
+        <label>Пароль</label>
+        <input type="password" name="password" id="password" placeholder="Введите пароль" formControlName="password" required/>
+
+        <button class="login-button" type="submit" (click)="login()" [disabled]="loginForm.invalid">Войти</button>
+        <button class="SignUp" type="button" routerLink="/signup">Регистрация</button>
+
+    </form>
+
+</div>
+
+</body>
+

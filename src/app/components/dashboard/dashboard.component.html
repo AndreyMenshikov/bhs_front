@@ -1,0 +1,74 @@
+<body>
+<h1>Таблица данных</h1>
+<button class="logout-button" type="submit" (click)="logout()" >Выход</button>
+<div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort>
+
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>ID</th>
+            <td mat-cell *matCellDef="let element">{{element.id}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="dateMeasurement">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Дата измерений</th>
+            <td mat-cell *matCellDef="let element">{{element.dateMeasurement | date:'dd.MM.yyyy HH:mm:ss'}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="dateStation">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Дата станции</th>
+            <td mat-cell *matCellDef="let element">{{element.dateStation | date:'dd.MM.yyyy HH:mm:ss'}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="idBaseStation">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>ID базовой станции</th>
+            <td mat-cell *matCellDef="let element">{{element.idBaseStation}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="idHive">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>ID улья</th>
+            <td mat-cell *matCellDef="let element">{{element.idHive}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="weight">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Вес</th>
+            <td mat-cell *matCellDef="let element">{{element.weight}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="temperatureInside">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Температура внутри</th>
+            <td mat-cell *matCellDef="let element">{{element.temperatureInside}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="temperatureOutside">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Температура снаружи</th>
+            <td mat-cell *matCellDef="let element">{{element.temperatureOutside}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="humidityInside">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Влажность внутри</th>
+            <td mat-cell *matCellDef="let element">{{element.humidityInside}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="humidityOutside">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Влажность снаружи</th>
+            <td mat-  *matCellDef="let element">{{element.humidityOutside}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="voltageController">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Напряжение контроллера</th>
+            <td mat-cell *matCellDef="let element">{{element.voltageController}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="voltageBattery">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Напряжение батареи</th>
+            <td mat-cell *matCellDef="let element">{{element.voltageBattery}}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [length]="dataSource.data.length"
+                   [pageSize]="3">
+    </mat-paginator>
+</div>
+</body>

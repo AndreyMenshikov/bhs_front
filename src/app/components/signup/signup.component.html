@@ -1,0 +1,27 @@
+
+
+<div class="form-bg">
+
+    <form [formGroup]="signupForm" class="form">
+        <div class="main-box">
+
+                <h1 class="admin">Регистрация</h1>
+            <div>
+                <input type="text" name="username" id="username" placeholder="Введите логин" formControlName="username" required/>
+            </div>
+            <div>
+                <input type="email" name="email" id="email" placeholder="Введите почту" formControlName="email" required/>
+            </div>
+            <div>
+                <input type="password" name="password" id="password" placeholder="Введите пароль" formControlName="password" required/>
+            </div>
+            <button class="login-button" type="button" [disabled]="signupForm.invalid" (click)="signup()">Зарегистрироваться</button>
+
+            <button class="SignUp" type="button" routerLink="/login">Уже есть аккаунт?</button>
+
+        </div>
+    </form>
+</div>
+
+
+

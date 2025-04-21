@@ -1,0 +1,75 @@
+/* Основной стиль страницы */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #444;
+}
+
+/* Таблица */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Заголовки таблицы */
+th {
+  background-color: #a8b4c6;
+  color: #000000;
+  font-weight: bold;
+  text-align: center;
+  padding: 0.75em;
+  border: 1px solid #ccc;
+}
+
+/* Ячейки таблицы */
+td {
+  padding: 0.75em;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+/* Чередование строк */
+table tr:nth-child(even) {
+  background-color: #eef5ff;
+}
+
+table tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+/* Наведение на строку */
+table tr:hover {
+  background-color: #d9e7ff;
+  transition: background-color 0.3s ease;
+}
+
+.logout-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #2c3e50;
+  color: #edf2f8;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+.logout-button:hover {
+  cursor: pointer;
+  background: #4f6285;
+  color: #ecf0f1;
+}
+
+.mat-sort-header:hover .mat-sort-header-arrow,
+.mat-sort-header.mat-sort-header-sorted .mat-sort-header-arrow {
+  color: #000 !important;
+  opacity: 1 !important;
+}
