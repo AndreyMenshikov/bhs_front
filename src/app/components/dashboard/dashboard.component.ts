@@ -12,9 +12,9 @@ import {MatSort} from "@angular/material/sort";
 })
 export class DashboardComponent implements OnInit {
   displayedColumns: string[] = [
-    'id', 'dateMeasurement', 'dateStation', 'idBaseStation', 'idHive',
-    'weight', 'temperatureInside', 'temperatureOutside', 'humidityInside',
-    'humidityOutside', 'voltageController', 'voltageBattery'
+      'recDate', 'stationId', 'hiveId', 'stationDate', 'clientDate', 'receivedDate',
+    't1', 't2', 'h1', 'h2',
+    'w0', 'w1', 'w2', 'w3', 'weight', 'voltage', 'stationVoltage', 'sign'
   ];
   dataSource = new MatTableDataSource<BeehiveData>([]);
 
@@ -33,7 +33,7 @@ export class DashboardComponent implements OnInit {
       this.dataSource.sort = this.sort;
 
       this.sort.sort({
-        id: 'dateMeasurement',
+        id: 'recDate',
         start: 'desc',
         disableClear: true
       });

@@ -5,18 +5,24 @@ import { Observable } from 'rxjs';
 const BASE_URL = 'http://158.160.151.134:8080/';
 
 export interface BeehiveData {
-    id: number;
-    dateMeasurement: string;
-    dateStation: string;
-    idBaseStation: number;
-    idHive: number;
+    stationId: string;
+    hiveId: string;
+    stationDate: string;
+    clientDate: string;
+    receivedDate: string;
+    t1: number;
+    t2: number;
+    h1: number;
+    h2: number;
+    w0: number;
+    w1: number;
+    w2: number;
+    w3: number;
     weight: number;
-    temperatureInside: number;
-    temperatureOutside: number;
-    humidityInside: number;
-    humidityOutside: number;
-    voltageController: number;
-    voltageBattery: number;
+    voltage: number;
+    stationVoltage: number;
+    sign: string;
+
 }
 
 @Injectable({
@@ -29,7 +35,7 @@ export class BeehiveService {
     getAllBeehiveData(): Observable<BeehiveData[]> {
         // Получаем токен из LocalStorage
         const jwtToken = localStorage.getItem('token');
-        console.log("Heloo epta" + jwtToken);
+        console.log("Token " + jwtToken);
         // Если токен существует, добавляем его в заголовки
         let headers = new HttpHeaders();
         if (jwtToken) {
